@@ -22,14 +22,37 @@ function App() {
   );
 }
 
-export default App;
-*/}
+export default App;*/}
 
-import React from "react";
-import Emi from "./Emi";
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
+import Header from './Header'; 
+import Home from './Home';    
+import Footer from './Footer'; 
 
 function App() {
-  return <Emi />;
+  return (
+    <Router>
+      
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        
+        
+        <Header />
+
+       
+        <main style={{ flex: '1 0 auto' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </main>
+        <Footer />
+
+      </div>
+    </Router>
+  );
 }
 
 export default App;
